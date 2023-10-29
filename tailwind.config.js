@@ -9,6 +9,9 @@ export default {
     extend: {
       fontFamily: { 
         vazir: ['vazir']
+      },
+      minHeight: {
+        '10': '2.5rem'
       }
     },
   },

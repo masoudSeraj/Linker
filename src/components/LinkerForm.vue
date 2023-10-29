@@ -129,7 +129,7 @@ function copyLinkCode(text) {
 
   </form>
 
-  <div class="relative flex w-full h-10 min-h-10 text-xs" dir="ltr">
+  <div class="relative flex w-full min-h-10 text-xs" dir="ltr">
 
     <div class="relative w-full bg-gray-100">
       <div :class="{ 'invisible' : linkCopy }" class="absolute right-0 flex items-center justify-center h-6 py-4 text-xs text-black bg-gray-200 rounded-md w-28 -bottom-10">

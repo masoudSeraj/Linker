@@ -10,11 +10,12 @@ import InstallPwa from '@/InstallPwa.vue';
 <br>
 <br>
 
-<div class="max-w-screen-md p-5 mx-auto font-vazir min-h-screen relative">
+<div class="mx-6 mb-4">
 
-  <PageHeader title="لینک ساز/خودساخته">
+  <div class="max-w-screen-md bg-violet-100 py-6 px-4 rounded-xl mx-auto font-vazir min-h-screen relative">
+    <PageHeader title="لینک ساز/خودساخته">
     <div class="flex justify-center">
-      <img src="/img/icons/icon-192x192.png" alt="خودساخته">
+      <img class="mix-blend-multiply" src="/img/icons/icon-192x192.png" alt="خودساخته">
     </div>
     
     <p>
@@ -27,14 +28,19 @@ import InstallPwa from '@/InstallPwa.vue';
   <LinkerForm></LinkerForm>
 
   <!-- <InstallPwa></InstallPwa> -->
+  </div>
+  
 
 
 </div>
 
-<footer class="max-w-screen-md mx-auto text-violet-500 w-full mt-auto">
+<footer class="mx-6 mb-4">
+  <div class="max-w-screen-md mx-auto text-violet-500 w-full mt-auto">
     <div class="w-full h-8">
       <p>&#169; طراحی و توسعه به وسیله تیم خودساخته</p>
     </div>
+  </div>
+    
 </footer>
 
 </template>
