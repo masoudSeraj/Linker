@@ -27,7 +27,7 @@ export default defineConfig({
       manifest: {
         theme_color: "#7F00FF",
         background_color: "#7F00FF",
-        display: "browser",
+        display: "standalone",
         scope: "/",
         start_url: "/",
         name: "Linker",
@@ -35,22 +35,22 @@ export default defineConfig({
         description: "A simple link and query string creator",
         icons: [
           {
-            src: 'img/icon-192x192.png',
+            src: '/img/icons/icon-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'img/icon-256x256.png',
+            src: '/img/icons/icon-256x256.png',
             sizes: '256x256',
             type: 'image/png'
           },
           {
-            src: 'img/icon-384x384.png',
+            src: '/img/icons/icon-384x384.png',
             sizes: '384x384',
             type: 'image/png'
           },
           {
-            src: 'img/icon-512x512.png',
+            src: '/img/icons/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           },

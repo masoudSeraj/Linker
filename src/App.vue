@@ -9,25 +9,29 @@ import LinkerForm from '@/LinkerForm.vue'
 <br>
 <br>
 
-<div class="max-w-screen-md p-5 mx-auto font-vazir">
+<div class="max-w-screen-md p-5 mx-auto font-vazir min-h-screen relative">
 
-  <PageHeader title="لینک ساز">
-    برای ایجاد لینک لطفا روی هر کدام از ورود ها کلیک کنید و مقدار <span class="text-indigo-600">UTM</span> مربوط
+  <PageHeader title="لینک ساز/خودساخته">
+    <div class="flex justify-center">
+      <img src="/img/icons/icon-192x192.png" alt="خودساخته">
+    </div>
+    
+    <p>
+      برای ایجاد لینک لطفا روی هر کدام از ورودی ها کلیک کنید و مقدار <span class="text-indigo-600">UTM</span> مربوط
                 را بنویسید
+    </p>
+    
   </PageHeader>
  
   <LinkerForm></LinkerForm>
+
+  <footer class="absolute bottom-0 text-violet-500 w-full">
+    <div class="w-full h-8">
+      <p>&#169; طراحی و توسعه به وسیله تیم خودساخته</p>
+    </div>
+</footer>
 </div>
-
-
-<!-- Credit: Componentity.com -->
-<!-- <a href="https://componentity.com" target="_blank" class="block">
-  <img src="http://codenawis.com/componentity/wp-content/uploads/2020/08/logo-componentity-%E2%80%93-9.png" class="w-48 mx-auto my-5">
-</a> -->
-
-
-
-  
+ 
 
 </template>
 
