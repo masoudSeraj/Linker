@@ -9,6 +9,7 @@ const utm_campaign = ref('');
 const source = ref(true);
 const disableDomain = ref(true)
 const linkCopy = ref(true)
+const linkCopyError = ref(false)
 
 const link = computed(() => `${domain.value}/${landing.value ?? 'نام لندینگ'}?utm_source=${utm_source.value}&utm_medium=${utm_medium.value}&utm_campaign=${utm_campaign.value}${source.value ? '&source=' + utm_source.value : ''}`)
 
@@ -17,7 +18,6 @@ watch(disableDomain, (newValue, oldValue) => {
 })
 
 function toggleDomain() {
-  console.log(disableDomain.value)
   if(!disableDomain.value && confirm('آیا میخواهید دامنه را تغییر دهید؟') === false) {
     disableDomain.value = true;
     return;
@@ -25,6 +25,12 @@ function toggleDomain() {
 }
 
 function copyLinkCode(text) {
+  console.log(domain.value, utm_campaign.value)
+  if(domain.value === '' || utm_campaign.value === '' || utm_medium.value === '' || utm_source.value === '' || landing.value === undefined){
+    linkCopyError.value = true;
+    setTimeout(() => linkCopyError.value = false, 2000)
+    return;
+  }
   linkCopy.value = false;
   setTimeout(() => linkCopy.value = true, 2000)
   navigator.clipboard.writeText(text)
@@ -52,7 +58,7 @@ function copyLinkCode(text) {
         <input v-model="domain"
           class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-100 border rounded appearance-none focus:outline-none focus:bg-white"
           :class="{ 'cursor-not-allowed border-violet-500 bg-gray-300': disableDomain }" :disabled="disableDomain"
-          id="grid-first-name" type="text" placeholder="Jane">
+          id="grid-first-name" type="text" placeholder="">
 
       </div>
       <div class="w-full px-3 md:w-1/2" dir="ltr">
@@ -128,6 +134,10 @@ function copyLinkCode(text) {
     <div class="relative w-full bg-gray-100">
       <div :class="{ 'invisible' : linkCopy }" class="absolute right-0 flex items-center justify-center h-6 py-4 text-xs text-black bg-gray-200 rounded-md w-28 -bottom-10">
         <p>لینک کپی شد</p>
+      </div>
+
+      <div dir="rtl" :class="{ 'invisible' : !linkCopyError }" class="absolute right-0 flex items-center justify-center h-6 py-4 text-xs text-red-800 bg-red-200 rounded-md w-40 -bottom-10">
+        <p>لطفا همه فیلد ها را پر کنید!!!</p>
       </div>
       
       <p id="link-code" class="flex items-center h-full text-left" style="width: calc(100% - 100px);">
