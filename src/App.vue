@@ -1,6 +1,7 @@
 <script setup>
 import PageHeader from '@/PageHeader.vue'
 import LinkerForm from '@/LinkerForm.vue'
+import InstallPwa from '@/InstallPwa.vue';
 
 </script>
 
@@ -25,13 +26,16 @@ import LinkerForm from '@/LinkerForm.vue'
  
   <LinkerForm></LinkerForm>
 
-  <footer class="absolute bottom-0 text-violet-500 w-full mt-6">
+  <!-- <InstallPwa></InstallPwa> -->
+
+
+</div>
+
+<footer class="max-w-screen-md mx-auto text-violet-500 w-full mt-auto">
     <div class="w-full h-8">
       <p>&#169; طراحی و توسعه به وسیله تیم خودساخته</p>
     </div>
 </footer>
-</div>
- 
 
 </template>
 
