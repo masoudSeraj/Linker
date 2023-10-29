@@ -129,7 +129,7 @@ function copyLinkCode(text) {
 
   </form>
 
-  <div class="relative flex w-full h-10 text-xs" dir="ltr">
+  <div class="relative flex w-full h-10 min-h-10 text-xs" dir="ltr">
 
     <div class="relative w-full bg-gray-100">
       <div :class="{ 'invisible' : linkCopy }" class="absolute right-0 flex items-center justify-center h-6 py-4 text-xs text-black bg-gray-200 rounded-md w-28 -bottom-10">
@@ -140,9 +140,9 @@ function copyLinkCode(text) {
         <p>لطفا همه فیلد ها را پر کنید!!!</p>
       </div>
       
-      <p id="link-code" class="flex items-center h-full text-left" style="width: calc(100% - 100px);">
-        {{ link }}
-      </p>
+      <div id="link-code" class="flex items-center h-full text-left" style="width: calc(100% - 100px);">
+        <p class="w-full break-words">{{ link }}</p>
+      </div>
       <button
       @click="copyLinkCode(link)"
       class="!absolute right-1 top-1 z-10 select-none rounded bg-violet-500 text-xs py-2 px-6 text-center align-middle font-sans uppercase text-white shadow-md shadow-violet-500/20 transition-all hover:shadow-lg hover:shadow-violet-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none peer-placeholder-shown:pointer-events-none peer-placeholder-shown:bg-blue-gray-500 peer-placeholder-shown:opacity-50 peer-placeholder-shown:shadow-none"
