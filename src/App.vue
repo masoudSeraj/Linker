@@ -25,7 +25,7 @@ import LinkerForm from '@/LinkerForm.vue'
  
   <LinkerForm></LinkerForm>
 
-  <footer class="absolute bottom-0 text-violet-500 w-full">
+  <footer class="absolute bottom-0 text-violet-500 w-full mt-6">
     <div class="w-full h-8">
       <p>&#169; طراحی و توسعه به وسیله تیم خودساخته</p>
     </div>
