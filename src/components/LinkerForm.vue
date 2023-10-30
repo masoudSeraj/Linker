@@ -11,7 +11,7 @@ const disableDomain = ref(true)
 const linkCopy = ref(true)
 const linkCopyError = ref(false)
 
-const link = computed(() => `${domain.value}/${landing.value ?? 'نام لندینگ'}?utm_source=${utm_source.value}&utm_medium=${utm_medium.value}&utm_campaign=${utm_campaign.value}${source.value ? '&source=' + utm_source.value : ''}`)
+const link = computed(() => `${domain.value?.toLowerCase()}/${landing.value?.toLowerCase() ?? 'نام لندینگ'}?utm_source=${utm_source.value?.toLowerCase()}&utm_medium=${utm_medium.value?.toLowerCase()}&utm_campaign=${utm_campaign.value?.toLowerCase()}${source.value ? '&source=' + utm_source.value?.toLowerCase() : ''}`)
 
 watch(disableDomain, (newValue, oldValue) => {
   disableDomain ? domain.value = 'https://landing.khodsakhte.ir' : ''
@@ -129,14 +129,14 @@ function copyLinkCode(text) {
 
   </form>
 
-  <div class="relative flex w-full min-h-10 text-xs" dir="ltr">
+  <div class="relative flex w-full text-xs min-h-10" dir="ltr">
 
     <div class="relative w-full bg-gray-100">
       <div :class="{ 'invisible' : linkCopy }" class="absolute right-0 flex items-center justify-center h-6 py-4 text-xs text-black bg-gray-200 rounded-md w-28 -bottom-10">
         <p>لینک کپی شد</p>
       </div>
 
-      <div dir="rtl" :class="{ 'invisible' : !linkCopyError }" class="absolute right-0 flex items-center justify-center h-6 py-4 text-xs text-red-800 bg-red-200 rounded-md w-40 -bottom-10">
+      <div dir="rtl" :class="{ 'invisible' : !linkCopyError }" class="absolute right-0 flex items-center justify-center w-40 h-6 py-4 text-xs text-red-800 bg-red-200 rounded-md -bottom-10">
         <p>لطفا همه فیلد ها را پر کنید!!!</p>
       </div>
       
