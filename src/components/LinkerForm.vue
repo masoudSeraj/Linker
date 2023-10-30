@@ -11,7 +11,7 @@ const disableDomain = ref(true)
 const linkCopy = ref(true)
 const linkCopyError = ref(false)
 
-const link = computed(() => `${domain.value?.toLowerCase()}/${landing.value?.toLowerCase() ?? 'نام لندینگ'}?utm_source=${utm_source.value?.toLowerCase()}&utm_medium=${utm_medium.value?.toLowerCase()}&utm_campaign=${utm_campaign.value?.toLowerCase()}${source.value ? '&source=' + utm_source.value?.toLowerCase() : ''}`)
+const link = computed(() => `${domain.value?.toLowerCase()}/${landing.value?.toLowerCase() ?? 'نام لندینگ'}?utm_source=${utm_source.value?.toLowerCase()}&utm_medium=${utm_medium.value?.toLowerCase()}&utm_campaign=${utm_campaign.value?.toLowerCase()}${source.value ? '&source=' + utm_medium.value?.toLowerCase() : ''}`)
 
 watch(disableDomain, (newValue, oldValue) => {
   disableDomain ? domain.value = 'https://landing.khodsakhte.ir' : ''
